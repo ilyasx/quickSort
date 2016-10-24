@@ -21,11 +21,8 @@ namespace ConsoleApplication1
             int q=upper;
             while (q >= p) {
 
-                while (array[p] < pivort) {
-                    if (p < upper)
-                        ++p;
-                } ;
-                while (array[--q] > pivort) ;
+                while (array[++p] < pivort && p<upper) ;
+                while (array[--q] > pivort && q>lower) ;
                 
                 if (p < q) {
                     swap(array[p], array[q]);
@@ -52,6 +49,7 @@ namespace ConsoleApplication1
             for (int i = 0; i < array.Length; i++) {
                 Console.Write(array[i] + " ");
             }
+            Console.WriteLine();
         }
 
         static void Main(string[] args)
